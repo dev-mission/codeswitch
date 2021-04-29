@@ -6,13 +6,13 @@ function ProfileList(){
     const [profiles, setProfiles] = useState([]);
 
     useEffect(function() {
-        Api.profiles.index().then(response => setProfiles(response.data));
+        Api.users.index().then(response => setProfiles(response.data));
     }, []);
 
     function onDelete(profile){
         if (window.confirm(`Are you sure you want to delete ${profile.name}?`)){
             // we'll execute code to delete the section
-            Api.profiles.delete(profile.id).then(function() {
+            Api.users.delete(profile.id).then(function() {
                 const newProfiles = profile.filter(s => s.id !== profile.id);
                 setProfiles(newProfiles);
             });

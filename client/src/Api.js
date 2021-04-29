@@ -39,25 +39,23 @@ const Api = {
       return instance.patch(`/api/passwords/${token}`, {password});
     }
   },
-  // added for profile
-  profiles: {
+  // edited for profile ( merged into users )
+  users: {
     index() {
-      return instance.get('/api/profiles');
+      return instance.get('/api/users');
     },
     create(data) {
-      return instance.post('/api/profiles', data);
+      return instance.post('/api/users', data);
     },
     get(id) {
-      return instance.get(`/api/profiles/${id}`);
+      return instance.get(`/api/users/${id}`);
     },
     update(id, data) {
-      return instance.patch(`/api/profiles/${id}`, data);
+      return instance.patch(`/api/users/${id}`, data);
     },
     delete(id) {
-      return instance.delete(`/api/profiles/${id}`);
-    }
-  },
-  users: {
+      return instance.delete(`/api/users/${id}`);
+    },
     me() {
       return instance.get('/api/users/me');
     }

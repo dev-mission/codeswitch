@@ -12,7 +12,7 @@ function ProfileForm() {
 
     useEffect(function(){
         if (id) {
-            Api.profiles.get(id).then((response) => setProfile(response.data));
+            Api.users.get(id).then((response) => setProfile(response.data));
         }
     }, []);
 
@@ -26,9 +26,9 @@ function ProfileForm() {
         event.preventDefault();
         try {
             if (id) {
-                await Api.profiles.update(id, profile); // when it's singular, it becomes dark blue..not sure if this is right + 31, 45, 49, 53 lines
+                await Api.users.update(id, profile); // when it's singular, it becomes dark blue..not sure if this is right + 31, 45, 49, 53 lines
             } else {
-                await Api.profiles.create(profile);
+                await Api.users.create(profile);
             }
             history.push('/profiles');
         } catch (error) {
