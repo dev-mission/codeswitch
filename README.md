@@ -287,3 +287,5 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 Ruqaiyah Angeles
 Aisha Asif
+
+sequelize model:generate --name person --attributes firstName:string,lastName:string,email:string,type:string,preference:string
