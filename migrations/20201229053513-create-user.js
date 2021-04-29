@@ -25,43 +25,33 @@ module.exports = {
       },
       // added for user data
       type: {
-        allowNull: false,
         type: Sequelize.STRING
       },
       school: {
-        allowNull: false,
         type: Sequelize.STRING
       },
       gender: {
-        allowNull: false,
         type: Sequelize.STRING
       },
       sexualOrientation: {
-        allowNull: false,
         type: Sequelize.STRING
       },
       race: {
-        allowNull: false,
         type: Sequelize.STRING
       },
       ethnicity: {
-        allowNull: false,
         type: Sequelize.STRING
       },
       collegeMajor: {
-        allowNull: false,
         type: Sequelize.STRING
       },
       geoLocation: {
-        allowNull: false,
         type: Sequelize.STRING
       },
       companyName: {
-        allowNull: false,
         type: Sequelize.STRING
       },
       industryExperience: {
-        allowNull: false,
         type: Sequelize.STRING
       },
       // end of things i added

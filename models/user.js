@@ -110,43 +110,33 @@ module.exports = (sequelize, DataTypes) => {
     // copy over + change sequelize >> datatypes
     // attribute for a class, matches variables in migrations
     type: {
-      allowNull: false,
       type: DataTypes.STRING
     },
     school: {
-      allowNull: false,
       type: DataTypes.STRING
     },
     gender: {
-      allowNull: false,
       type: DataTypes.STRING
     },
     sexualOrientation: {
-      allowNull: false,
       type: DataTypes.STRING
     },
     race: {
-      allowNull: false,
       type: DataTypes.STRING
     },
     ethnicity: {
-      allowNull: false,
       type: DataTypes.STRING
     },
     collegeMajor: {
-      allowNull: false,
       type: DataTypes.STRING
     },
     geoLocation: {
-      allowNull: false,
       type: DataTypes.STRING
     },
     companyName: {
-      allowNull: false,
       type: DataTypes.STRING
     },
     industryExperience: {
-      allowNull: false,
       type: DataTypes.STRING
     },
     // end of copied from migrations > create-user.js
