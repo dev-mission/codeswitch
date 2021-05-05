@@ -9,10 +9,10 @@ const helpers = require('../helpers');
 
 const router = express.Router();
 
-router.get('/', interceptors.requireAdmin, function(req, res, next) {
+router.get('/', interceptors.requireLogin, function(req, res, next) {
   models.User.paginate({
     page: req.query.page || 1,
-    order: [['last_name', 'ASC'], ['first_name', 'ASC'], ['email', 'ASC']]
+    order: [['lastName', 'ASC'], ['firstName', 'ASC'], ['email', 'ASC']]
   }).then(function({docs, pages, total}) {
     res.json(docs.map(d => d.toJSON()));
   });
@@ -26,7 +26,7 @@ router.get('/me', function(req, res, next) {
   }
 });
 
-router.get('/:id', interceptors.requireAdmin, function(req, res, next) {
+router.get('/:id', interceptors.requireLogin, function(req, res, next) {
   models.User.findByPk(req.params.id).then(function(user) {
     if (user) {
       res.json(user.toJSON());
@@ -38,13 +38,14 @@ router.get('/:id', interceptors.requireAdmin, function(req, res, next) {
   });
 });
 
-router.patch('/:id', interceptors.requireAdmin, function(req, res, next) {
+router.patch('/:id', interceptors.requireLogin, function(req, res, next) {
   models.sequelize.transaction(function(transaction) {
     return models.User.findByPk(req.params.id, {transaction}).then(function(user) {
       return helpers.handleUpload(user, "iconUrl", req.body.iconUrl, 'users/icon');
     }).then(function(user) {
       return user.update({
-        firstName: req.body.firstName,
+        // add the new attributes here!!!
+        firstName: req.body.firstName, 
         lastName: req.body.lastName,
         email: req.body.email,
         iconUrl: user.iconUrl
@@ -72,6 +73,17 @@ router.patch('/:id', interceptors.requireAdmin, function(req, res, next) {
       res.sendStatus(500);
     }
   });
+});
+
+// added from deleted profile
+router.delete('/:id', interceptors.requireLogin, async function(req, res) {
+  const rows = await models.User.findByPk(req.params.id);
+  if (rows) {
+    await rows.destroy();
+    res.status(HttpStatus.OK).end();
+  } else {
+    res.status(HttpStatus.NOT_FOUND).end();
+  }
 });
 
 module.exports = router;

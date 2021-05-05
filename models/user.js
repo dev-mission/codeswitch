@@ -107,6 +107,39 @@ module.exports = (sequelize, DataTypes) => {
         return `${this.firstName} ${this.lastName} <${this.email}>`;
       }
     },
+    // copy over + change sequelize >> datatypes DONE ( in migrations)
+    // attribute for a class, matches variables in migrations
+    type: {
+      type: DataTypes.STRING
+    },
+    school: {
+      type: DataTypes.STRING
+    },
+    gender: {
+      type: DataTypes.STRING
+    },
+    sexualOrientation: {
+      type: DataTypes.STRING
+    },
+    race: {
+      type: DataTypes.STRING
+    },
+    ethnicity: {
+      type: DataTypes.STRING
+    },
+    collegeMajor: {
+      type: DataTypes.STRING
+    },
+    geoLocation: {
+      type: DataTypes.STRING
+    },
+    companyName: {
+      type: DataTypes.STRING
+    },
+    industryExperience: {
+      type: DataTypes.STRING
+    },
+    // end of copied from migrations > create-user.js
     hashedPassword: {
       type: DataTypes.STRING
     },

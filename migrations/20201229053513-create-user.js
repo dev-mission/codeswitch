@@ -10,6 +10,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      // needed 
       firstName: {
         allowNull: false,
         type: Sequelize.STRING
@@ -22,6 +23,38 @@ module.exports = {
         allowNull: false,
         type: Sequelize.CITEXT
       },
+      // added for user data
+      type: {
+        type: Sequelize.STRING
+      },
+      school: {
+        type: Sequelize.STRING
+      },
+      gender: {
+        type: Sequelize.STRING
+      },
+      sexualOrientation: {
+        type: Sequelize.STRING
+      },
+      race: {
+        type: Sequelize.STRING
+      },
+      ethnicity: {
+        type: Sequelize.STRING
+      },
+      collegeMajor: {
+        type: Sequelize.STRING
+      },
+      geoLocation: {
+        type: Sequelize.STRING
+      },
+      companyName: {
+        type: Sequelize.STRING
+      },
+      industryExperience: {
+        type: Sequelize.STRING
+      },
+      // end of things i added
       hashedPassword: {
         type: Sequelize.STRING
       },
