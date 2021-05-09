@@ -6,6 +6,7 @@ function ProfileForm() {
     const {id} = useParams();
     const history = useHistory();
     const [profile, setProfile] = useState({
+        // do we add attributes here? + line 41
         name: '',
         position: 0,
     });
@@ -26,7 +27,7 @@ function ProfileForm() {
         event.preventDefault();
         try {
             if (id) {
-                await Api.users.update(id, profile); // when it's singular, it becomes dark blue..not sure if this is right + 31, 45, 49, 53 lines
+                await Api.users.update(id, profile);
             } else {
                 await Api.users.create(profile);
             }
@@ -38,7 +39,7 @@ function ProfileForm() {
 
     return(
         <main className="container">
-        <h1>Profile Form</h1>
+        <h1>LET'S GET INTRODUCTIONS OUT OF THE WAY.</h1>
         <form onSubmit={onSubmit}>
         <div className="mb-3">
             <label className="form-label">Name</label>
@@ -50,7 +51,7 @@ function ProfileForm() {
         </div>
         <button className="btn btn-primary" type="submit">Submit</button>
         </form>
-        <p>{JSON.stringify(profile.name)}</p>
+        <p>{JSON.stringify(profile)}</p>
     </main>
     )
 }

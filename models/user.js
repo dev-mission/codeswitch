@@ -107,7 +107,7 @@ module.exports = (sequelize, DataTypes) => {
         return `${this.firstName} ${this.lastName} <${this.email}>`;
       }
     },
-    // copy over + change sequelize >> datatypes DONE ( in migrations)
+
     // attribute for a class, matches variables in migrations
     type: {
       type: DataTypes.STRING
