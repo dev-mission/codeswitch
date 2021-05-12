@@ -6,9 +6,10 @@ function ProfileForm() {
     const {id} = useParams();
     const history = useHistory();
     const [profile, setProfile] = useState({
-        // do we add attributes here? + line 41
-        name: '',
-        position: 0,
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: ''
     });
 
     useEffect(function(){
@@ -29,7 +30,7 @@ function ProfileForm() {
             if (id) {
                 await Api.users.update(id, profile);
             } else {
-                await Api.users.create(profile);
+                await Api.auth.register(profile);
             }
             history.push('/profiles');
         } catch (error) {
@@ -41,15 +42,23 @@ function ProfileForm() {
         <main className="container">
         <h1>LET'S GET INTRODUCTIONS OUT OF THE WAY.</h1>
         <form onSubmit={onSubmit}>
-        <div className="mb-3">
-            <label className="form-label">Name</label>
-            <input className="form-control" type="text" name="name" value={profile.name} onChange={onChange} />
-        </div>
-        <div className="mb-3">
-            <label className="form-label">Position</label>
-            <input className="form-control" type="text" name="position" value={profile.position} onChange={onChange}/>
-        </div>
-        <button className="btn btn-primary" type="submit">Submit</button>
+            <div className="mb-3">
+                <label className="form-label" htmlFor="firstName">First name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" onChange={onChange} value={profile.firstName} />
+            </div>
+            <div className="mb-3">
+                <label className="form-label" htmlFor="lastName">Last name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" onChange={onChange} value={profile.lastName} />
+            </div>
+            <div className="mb-3">
+                <label className="form-label" htmlFor="email">Email</label>
+                <input type="text" class="form-control" id="email" name="email" onChange={onChange} value={profile.email} />
+            </div>
+            <div className="mb-3">
+                <label className="form-label" htmlFor="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" onChange={onChange} value={profile.password} />
+            </div>
+            <button className="btn btn-primary" type="submit">Submit</button>
         </form>
         <p>{JSON.stringify(profile)}</p>
     </main>

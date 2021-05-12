@@ -44,9 +44,6 @@ const Api = {
     index() {
       return instance.get('/api/users');
     },
-    create(data) {
-      return instance.post('/api/users', data);
-    },
     get(id) {
       return instance.get(`/api/users/${id}`);
     },
