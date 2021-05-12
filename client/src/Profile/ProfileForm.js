@@ -128,14 +128,7 @@ function ProfileForm() {
                 <label className="form-label" htmlFor="password">Ethnicity</label>
                 <input type="text" class="form-control" id="ethnicity" name="ethnicity" onChange={onChange} value={profile.ethnicity} />
             </div>
-
-
-
-
-
-
-
-
+            
             <button className="btn btn-primary" type="submit">Submit</button>
         </form>
         <p>{JSON.stringify(profile)}</p>
