@@ -13,7 +13,7 @@ function ProfileList(){
         if (window.confirm(`Are you sure you want to delete ${profile.name}?`)){
             // we'll execute code to delete the section
             Api.users.delete(profile.id).then(function() {
-                const newProfiles = profile.filter(s => s.id !== profile.id);
+                const newProfiles = profiles.filter(s => s.id !== profile.id);
                 setProfiles(newProfiles);
             });
         }

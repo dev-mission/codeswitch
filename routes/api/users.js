@@ -86,4 +86,15 @@ router.patch('/:id', interceptors.requireLogin, function(req, res, next) {
   });
 });
 
+// needed to add to delete
+router.delete('/:id', interceptors.requireLogin, async function(req, res) {
+  const user = await models.User.findByPk(req.params.id);
+  if (user) {
+    await user.destroy();
+    res.status(HttpStatus.OK).end();
+  } else {
+    res.status(HttpStatus.NOT_FOUND).end();
+  }
+});
+
 module.exports = router;
