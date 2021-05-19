@@ -29,7 +29,7 @@ function Register() {
     setError(null);
     try {
       await Api.auth.register(user);
-      history.push('/login', {flash: 'Your account has been created!'});
+      history.push('/profiles/5/edit', {flash: 'Your account has been created!'}); // /login
     } catch (error) {
       if (error.response?.status === StatusCodes.UNPROCESSABLE_ENTITY) {
         setError(new ValidationError(error.response.data));

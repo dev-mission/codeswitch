@@ -18,10 +18,18 @@ function ProfileList(){
             });
         }
     }
-
+    
     return (
         <main className="container">
-        <h1>Profile List</h1>
+            <h1>head over to the prototype</h1>
+        </main>
+    );
+}
+
+export default ProfileList;
+
+/**
+ * <h1>Profile List</h1>
         <Link className="btn btn-primary" to="/profiles/new">New</Link>
         <ul>
             {profiles.map(s => (
@@ -31,8 +39,4 @@ function ProfileList(){
                 </li>
             ))}
         </ul>
-        </main>
-    );
-}
-
-export default ProfileList;
+ */

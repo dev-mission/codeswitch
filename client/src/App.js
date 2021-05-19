@@ -23,12 +23,15 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
+
           <Route path="/login">
             <Login />
           </Route>
+
           <Route path="/passwords">
             <Passwords />
           </Route>
+
           {process.env.REACT_APP_FEATURE_REGISTRATION === 'true' && (
             <Route path="/register">
               <Register />

@@ -6,10 +6,6 @@ function ProfileForm() {
     const {id} = useParams();
     const history = useHistory();
     const [profile, setProfile] = useState({
-        //firstName: '',
-        //lastName: '',
-        //email: '',
-        //password: '',
         // start of added attributes
         type: '',
         school: '',
@@ -115,28 +111,9 @@ function ProfileForm() {
             
             <button className="btn btn-primary" type="submit">Submit</button>
         </form>
-        <br></br>
+        <p>{JSON.stringify(profile)}</p>
     </main>
     )
 }
 
 export default ProfileForm;
-
-// <div className="mb-3">
-//<label className="form-label" htmlFor="firstName">First name</label>
-//<input type="text" class="form-control" id="firstName" name="firstName" onChange={onChange} value={profile.firstName} />
-//</div>
-//<div className="mb-3">
-//<label className="form-label" htmlFor="lastName">Last name</label>
-//<input type="text" class="form-control" id="lastName" name="lastName" onChange={onChange} value={profile.lastName} />
-//</div>
-//<div className="mb-3">
-//<label className="form-label" htmlFor="email">Email</label>
-//<input type="text" class="form-control" id="email" name="email" onChange={onChange} value={profile.email} />
-//</div>
-//<div className="mb-3">
-//<label className="form-label" htmlFor="password">Password</label>
-//<input type="password" class="form-control" id="password" name="password" onChange={onChange} value={profile.password} />
-//</div>
-
-// <p>{JSON.stringify(profile)}</p>
