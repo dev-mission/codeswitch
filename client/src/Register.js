@@ -6,8 +6,10 @@ import {StatusCodes} from 'http-status-codes'
 import Api from './Api';
 import UnexpectedError from './UnexpectedError';
 import ValidationError from './ValidationError';
+import { useAuthContext } from './AuthContext';
 
 function Register() {
+  const authContext = useAuthContext();
   const history = useHistory();
 
   const [user, setUser] = useState({
@@ -28,8 +30,9 @@ function Register() {
     event.preventDefault();
     setError(null);
     try {
-      await Api.auth.register(user);
-      history.push('/profiles/5/edit', {flash: 'Your account has been created!'}); // /login LOOK HERE 
+      const response = await Api.auth.register(user);
+      authContext.setUser(response.data);
+      history.push(`/profiles/${response.data.id}/edit`, {flash: 'Your account has been created!'}); // /login LOOK HERE 
     } catch (error) {
       if (error.response?.status === StatusCodes.UNPROCESSABLE_ENTITY) {
         setError(new ValidationError(error.response.data));

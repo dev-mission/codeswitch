@@ -11,11 +11,11 @@ function ProfileForm() {
         //email: '',
         //password: '',
         // start of added attributes
-        type: '',
+        type: 'Choose...',
         school: '',
-        gender: '',
-        sexualOrientation: '',
-        race: '',
+        gender: 'Choose...',
+        sexualOrientation: 'Choose...',
+        race: 'Choose...',
         ethnicity: '',
         collegeMajor: '',
         geoLocation: '',
@@ -57,28 +57,28 @@ function ProfileForm() {
         <form onSubmit={onSubmit}>
             <div className="mb-3">
                 <label className="form-label" htmlFor="type">I am a</label>
-                <select class="form-select" id="pType" name="pType" onChange={onChange} value={profile.type}>
-                    <option selected>Choose...</option>
+                <select className="form-select" id="type" name="type" onChange={onChange} value={profile.type}>
+                    <option>Choose...</option>
                     <option>Student</option>
                     <option>Volunteer</option>
                 </select>
             </div>
             <div className="mb-3">
-                <label className="form-label" htmlFor="password">Where do you go to school?</label>
-                <input type="text" class="form-control" id="college" name="college" onChange={onChange} value={profile.college} />
+                <label className="form-label" htmlFor="school">Where do you go to school?</label>
+                <input type="text" className="form-control" id="school" name="school" onChange={onChange} value={profile.school} />
             </div>
             <div className="mb-3">
-                <label className="form-label" htmlFor="password">Major</label>
-                <input type="text" class="form-control" id="collegeMajor" name="collegeMajor" onChange={onChange} value={profile.collegeMajor} />
+                <label className="form-label" htmlFor="collegeMajor">Major</label>
+                <input type="text" className="form-control" id="collegeMajor" name="collegeMajor" onChange={onChange} value={profile.collegeMajor} />
             </div>
             <div className="mb-3">
-                <label className="form-label" htmlFor="password">Geograhpic Location</label>
-                <input type="text" class="form-control" id="geoLocation" name="geoLocation" onChange={onChange} value={profile.geoLocation} />
+                <label className="form-label" htmlFor="geoLocation">Geograhpic Location</label>
+                <input type="text" className="form-control" id="geoLocation" name="geoLocation" onChange={onChange} value={profile.geoLocation} />
             </div>
             <div className="mb-3">
-                <label className="form-label" htmlFor="type">Gender</label>
-                <select class="form-select" id="gender" name="gender" onChange={onChange} value={profile.gender}>
-                    <option selected>Choose...</option>
+                <label className="form-label" htmlFor="gender">Gender</label>
+                <select className="form-select" id="gender" name="gender" onChange={onChange} value={profile.gender}>
+                    <option>Choose...</option>
                     <option>Male</option>
                     <option>Female</option>
                     <option>Transgender</option>
@@ -87,18 +87,18 @@ function ProfileForm() {
                 </select>
             </div>
             <div className="mb-3">
-                <label className="form-label" htmlFor="type">Sexual Orientation</label>
-                <select class="form-select" id="sexualOrientation" name="sexualOrientation" onChange={onChange} value={profile.sexualOrientation}>
-                    <option selected>Choose...</option>
+                <label className="form-label" htmlFor="sexualOrientation">Sexual Orientation</label>
+                <select className="form-select" id="sexualOrientation" name="sexualOrientation" onChange={onChange} value={profile.sexualOrientation}>
+                    <option>Choose...</option>
                     <option>Heterosexual/Straight</option>
                     <option>Homosexual/Gay</option>
                     <option>Decline to state</option>
                 </select>
             </div>
             <div className="mb-3">
-                <label className="form-label" htmlFor="type">Race</label>
-                <select class="form-select" id="race" name="race" onChange={onChange} value={profile.race}>
-                    <option selected>Choose...</option>
+                <label className="form-label" htmlFor="race">Race</label>
+                <select className="form-select" id="race" name="race" onChange={onChange} value={profile.race}>
+                    <option>Choose...</option>
                     <option>Asian American</option>
                     <option>African American/Black</option>
                     <option>Hispanic/Latin</option>
@@ -109,8 +109,8 @@ function ProfileForm() {
                 </select>
             </div>
             <div className="mb-3">
-                <label className="form-label" htmlFor="password">Ethnicity</label>
-                <input type="text" class="form-control" id="ethnicity" name="ethnicity" onChange={onChange} value={profile.ethnicity} />
+                <label className="form-label" htmlFor="ethnicity">Ethnicity</label>
+                <input type="text" className="form-control" id="ethnicity" name="ethnicity" onChange={onChange} value={profile.ethnicity} />
             </div>
             
             <button className="btn btn-primary" type="submit">Submit</button>
@@ -124,19 +124,19 @@ export default ProfileForm;
 
 // <div className="mb-3">
 //<label className="form-label" htmlFor="firstName">First name</label>
-//<input type="text" class="form-control" id="firstName" name="firstName" onChange={onChange} value={profile.firstName} />
+//<input type="text" className="form-control" id="firstName" name="firstName" onChange={onChange} value={profile.firstName} />
 //</div>
 //<div className="mb-3">
 //<label className="form-label" htmlFor="lastName">Last name</label>
-//<input type="text" class="form-control" id="lastName" name="lastName" onChange={onChange} value={profile.lastName} />
+//<input type="text" className="form-control" id="lastName" name="lastName" onChange={onChange} value={profile.lastName} />
 //</div>
 //<div className="mb-3">
 //<label className="form-label" htmlFor="email">Email</label>
-//<input type="text" class="form-control" id="email" name="email" onChange={onChange} value={profile.email} />
+//<input type="text" className="form-control" id="email" name="email" onChange={onChange} value={profile.email} />
 //</div>
 //<div className="mb-3">
 //<label className="form-label" htmlFor="password">Password</label>
-//<input type="password" class="form-control" id="password" name="password" onChange={onChange} value={profile.password} />
+//<input type="password" className="form-control" id="password" name="password" onChange={onChange} value={profile.password} />
 //</div>
 
 // <p>{JSON.stringify(profile)}</p>

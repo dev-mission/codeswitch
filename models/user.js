@@ -28,7 +28,17 @@ module.exports = (sequelize, DataTypes) => {
         'id',
         'firstName',
         'lastName',
-        'email'
+        'email',
+        'type',
+        'school',
+        'gender',
+        'sexualOrientation',
+        'race',
+        'ethnicity',
+        'collegeMajor',
+        'geoLocation',
+        'companyName',
+        'industryExperience',
       ]);
     }
 
