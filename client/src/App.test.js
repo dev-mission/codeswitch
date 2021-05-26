@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders my name', () => {
+test('renders codeswitch', () => {
   render(<App />);
-  const linkElement = screen.getByText(/My Name/i);
+  const linkElement = screen.getByText(/codeswitch/i);
   expect(linkElement).toBeInTheDocument();
 });
