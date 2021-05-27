@@ -44,10 +44,21 @@ router.patch('/:id', interceptors.requireLogin, function(req, res, next) {
       return helpers.handleUpload(user, "iconUrl", req.body.iconUrl, 'users/icon');
     }).then(function(user) {
       return user.update({
-        // add the new attributes here!!!
         firstName: req.body.firstName, 
         lastName: req.body.lastName,
         email: req.body.email,
+        // added attributes starting here
+        type: req.body.type,
+        school: req.body.school,
+        gender: req.body.gender,
+        sexualOrientation: req.body.sexualOrientation,
+        race: req.body.race,
+        ethnicity: req.body.ethnicity,
+        collegeMajor: req.body.collegeMajor,
+        geoLocation: req.body.geoLocation,
+        companyName: req.body.companyName,
+        industryExperience: req.body.industryExperience,
+        // end of added attributes
         iconUrl: user.iconUrl
       }, {transaction});
     }).then(function(user) {
@@ -75,11 +86,11 @@ router.patch('/:id', interceptors.requireLogin, function(req, res, next) {
   });
 });
 
-// added from deleted profile
+// needed to add to delete
 router.delete('/:id', interceptors.requireLogin, async function(req, res) {
-  const rows = await models.User.findByPk(req.params.id);
-  if (rows) {
-    await rows.destroy();
+  const user = await models.User.findByPk(req.params.id);
+  if (user) {
+    await user.destroy();
     res.status(HttpStatus.OK).end();
   } else {
     res.status(HttpStatus.NOT_FOUND).end();

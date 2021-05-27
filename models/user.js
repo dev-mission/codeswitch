@@ -28,7 +28,17 @@ module.exports = (sequelize, DataTypes) => {
         'id',
         'firstName',
         'lastName',
-        'email'
+        'email',
+        'type',
+        'school',
+        'gender',
+        'sexualOrientation',
+        'race',
+        'ethnicity',
+        'collegeMajor',
+        'geoLocation',
+        'companyName',
+        'industryExperience',
       ]);
     }
 
@@ -107,7 +117,7 @@ module.exports = (sequelize, DataTypes) => {
         return `${this.firstName} ${this.lastName} <${this.email}>`;
       }
     },
-    // copy over + change sequelize >> datatypes DONE ( in migrations)
+
     // attribute for a class, matches variables in migrations
     type: {
       type: DataTypes.STRING

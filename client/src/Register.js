@@ -6,8 +6,10 @@ import {StatusCodes} from 'http-status-codes'
 import Api from './Api';
 import UnexpectedError from './UnexpectedError';
 import ValidationError from './ValidationError';
+import { useAuthContext } from './AuthContext';
 
 function Register() {
+  const authContext = useAuthContext();
   const history = useHistory();
 
   const [user, setUser] = useState({
@@ -28,8 +30,9 @@ function Register() {
     event.preventDefault();
     setError(null);
     try {
-      await Api.auth.register(user);
-      history.push('/login', {flash: 'Your account has been created!'});
+      const response = await Api.auth.register(user);
+      authContext.setUser(response.data);
+      history.push(`/profiles/${response.data.id}/edit`, {flash: 'Your account has been created!'}); // /login LOOK HERE 
     } catch (error) {
       if (error.response?.status === StatusCodes.UNPROCESSABLE_ENTITY) {
         setError(new ValidationError(error.response.data));
@@ -42,8 +45,8 @@ function Register() {
   return (
     <main className="container">
       <div className="row justify-content-center">
-        <div className="col col-sm-10 col-md-8 col-lg-6 col-xl-4">
-          <div className="card">
+        <div className="col col-sm-10 col-md-8 col-lg-6 col-xl-4"><br></br><br></br><br></br><br></br>
+          <div className="cardd">
             <div className="card-body">
               <h2 className="card-title">Register</h2>
               <form onSubmit={onSubmit}>
@@ -74,7 +77,7 @@ function Register() {
                   <button className="btn btn-primary" type="submit">Submit</button>
                 </div>
                 <div className="mb-3 text-center">
-                  <Link to="/login">Already have an account?</Link>
+                  <Link to="/login" className="words">Already have an account?</Link>
                 </div>
               </form>
             </div>
