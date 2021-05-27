@@ -45,8 +45,8 @@ function Register() {
   return (
     <main className="container">
       <div className="row justify-content-center">
-        <div className="col col-sm-10 col-md-8 col-lg-6 col-xl-4">
-          <div className="card">
+        <div className="col col-sm-10 col-md-8 col-lg-6 col-xl-4"><br></br><br></br><br></br><br></br>
+          <div className="cardd">
             <div className="card-body">
               <h2 className="card-title">Register</h2>
               <form onSubmit={onSubmit}>

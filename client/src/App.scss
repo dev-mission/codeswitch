@@ -87,7 +87,7 @@ a {
 }
 
 .login-button {
-  border: 2px solid black;
+  border: 3px solid black;
   padding-left: 1px;
   padding-right: 1px;
 }
@@ -161,4 +161,72 @@ a {
   font-weight: bold;
   color: black;
   margin-top: 22px;
+}
+
+/* login styling */
+.cardd{
+  background: #000;
+  padding: 50px;
+  height: 575px;
+  margin-top: 5rem;
+  max-width: 50%;
+
+  position: absolute;
+  width: 500px;
+  top: 25%;
+  left: 33%;
+  margin: -25px 0 0 -25px;
+
+  .card-title{
+    font-family: "Poppins", sans-serif;
+    color: #EF29EC;
+  }
+
+  label{
+    color: white;
+  }
+
+  .btn.btn-primary{
+    color: black;
+    font-weight: bold;
+    background-color: #EF29EC;
+  }
+
+  .mb-3.text-center{
+    color: #EF29EC;
+  }
+}
+
+/* info-form styling */
+.info-form {
+  background: #000;
+  padding: 50px;
+  height: 900px;
+  margin-top: 5rem;
+  max-width: 50%;
+
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  margin: -25px 0 0 -25px;
+
+  h1 {
+    font-family: "Poppins", sans-serif;
+    color: #EF29EC;
+  }
+
+  label{
+    color: white;
+  }
+
+  button{
+    color: black;
+  }
+
+  .btn.btn-primary{
+    color: black;
+    font-weight: bold;
+    background-color: #EF29EC;
+  }
+
 }
