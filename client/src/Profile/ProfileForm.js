@@ -114,8 +114,9 @@ function ProfileForm() {
                         <input type="text" className="form-control" id="ethnicity" name="ethnicity" onChange={onChange} value={profile.ethnicity} />
                     </div>
 
-                    <button className="btn btn-primary" type="submit">></button><br></br><br></br><br></br>
+                    <button className="btn btn-primary" type="submit">NEXT</button><br></br><br></br><br></br>
                 </form>
+                <br></br><br></br><br></br>
             </div>
         </main>
     )
