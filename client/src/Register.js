@@ -77,7 +77,7 @@ function Register() {
                   <button className="btn btn-primary" type="submit">Submit</button>
                 </div>
                 <div className="mb-3 text-center">
-                  <Link to="/login">Already have an account?</Link>
+                  <Link to="/login" className="words">Already have an account?</Link>
                 </div>
               </form>
             </div>

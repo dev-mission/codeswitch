@@ -33,7 +33,7 @@ function Login() {
     <main className="container">
       <div className="row justify-content-center">
         <div className="col col-sm-10 col-md-8 col-lg-6 col-xl-4"><br></br><br></br><br></br><br></br><br></br>
-          <div className="card">
+          <div className="carddd">
             <div className="card-body">
               <h2 className="card-title">Log in</h2>
               {history.location.state?.flash && (
@@ -55,9 +55,9 @@ function Login() {
                   <button className="btn btn-primary" type="submit">Submit</button>
                 </div>
                 <div className="mb-3 text-center">
-                  <Link to="/passwords/forgot">Forgot your password?</Link>
+                  <Link to="/passwords/forgot" className="words">Forgot your password?</Link>
                   {process.env.REACT_APP_FEATURE_REGISTRATION === 'true' && (
-                    <><br /><Link to="/register">Need an account?</Link></>
+                    <><br /><Link to="/register" className="words">Need an account?</Link></>
                   )}
                 </div>
               </form>
