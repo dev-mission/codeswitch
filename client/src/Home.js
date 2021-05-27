@@ -4,15 +4,17 @@ function Home() {
 
         <div class="showcase-content">
           <h1>FIND THE <br></br>RIGHT FIT</h1>
-            <p>A NEW WAY OF MENTORSHIP</p>
+            <p>MENTORSHIP DONE RIGHT</p>
         </div>
 
         <div class="showcase-p">
             <h3>A NEW KIND OF MEMBERSHIP</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, voluptatibus, quia expedita nemo ut voluptate hic dolorem necessitatibus, officia provident quod consequatur odio ratione accusamus. Distinctio voluptatibus nostrum natus molestias
-            vel cupiditate sit ex, mollitia ducimus, minus quos magni eius placeat obcaecati praesentium, laborum nesciunt! Nulla eius unde aspernatur iusto eveniet sequi perferendis ipsa earum possimus, odit provident ea porro ex enim quaerat corporis
-            quo cumque officiis aliquam vero! Minus quis, obcaecati sed ipsam alias fugit similique, asperiores accusamus mollitia sit repellat ad! Ipsum ratione blanditiis, nisi odio facere natus saepe architecto vero at fugiat aperiam cum consequatur
-            unde quae!</p>
+            <p>
+              Networking can be intimidating, we know. This is why our platform is designed to give you the opportunity
+              to choose when you have to set up a call, and with whom. Whenever you think you found the right fit, set up 
+              a preliminary call to make sure! If all goes well, attend our kickoff mixer event and start your three month
+              mentorship. 
+            </p>
           </div>
 
           <footer class="ffooter">
